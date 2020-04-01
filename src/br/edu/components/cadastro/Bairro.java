@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Bairro extends JFrame{
+public class Bairro extends JFrame {
 
     private JPanel panelPrincipal;
     private JPanel panelButtons;
@@ -17,10 +17,10 @@ public class Bairro extends JFrame{
     private JButton cadastrarButton;
     private JButton salvarEdiçãoButton;
     private JButton consultarButton;
+    private JButton excluirButton;
 
     public Bairro() {
         setTitle("Cadastro de Bairro");
-        //"Menu de Op\u00E7\u00F5es"
         inicializarComponents();
         listeners();
     }
@@ -48,13 +48,15 @@ public class Bairro extends JFrame{
         consultarButton = new JButton("Consultar");
         panelButtons.add(consultarButton);
 
+        excluirButton = new JButton("Excluir");
+        panelButtons.add(excluirButton);
+
         cancelarButton = new JButton("Cancelar");
         panelButtons.add(cancelarButton);
 
         getContentPane().add(panelButtons, BorderLayout.SOUTH);
 
-        setSize(450, 200);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(500, 250);
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
@@ -86,9 +88,15 @@ public class Bairro extends JFrame{
             }
         });
 
-        cancelarButton.addActionListener(new ActionListener() {
+        excluirButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
+            }
+        });
+
+        cancelarButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
             }
         });
     }
