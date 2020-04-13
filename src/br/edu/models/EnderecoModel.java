@@ -5,7 +5,7 @@ import br.edu.abstracts.EnderecoAbstract;
 public class EnderecoModel extends EnderecoAbstract {
 
     private String logradouro = "";
-    private int numero = 0;
+    private String numero = "";
     private String bairro = "";
     private String municipio = "";
     private String estado = "";
@@ -20,11 +20,11 @@ public class EnderecoModel extends EnderecoAbstract {
         this.logradouro = logradouro;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
