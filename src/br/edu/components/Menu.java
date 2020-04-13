@@ -4,6 +4,7 @@ import br.edu.components.cadastro.Bairro;
 import br.edu.components.cadastro.Endereco;
 import br.edu.components.cadastro.Estado;
 import br.edu.components.cadastro.Municipio;
+import br.edu.control.Controller;
 
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
@@ -25,9 +26,12 @@ public class Menu extends JFrame{
 	private JMenu menuAjuda;
 	private JMenuItem menuItemSair;
 
+	private Controller controller = new Controller();
+
 	public Menu() {
 		setTitle("Menu de Op\u00E7\u00F5es");
 		inicializarComponents();
+		controller.popularComDadosFixos();
 		listeners();
 	}
 
@@ -70,25 +74,25 @@ public class Menu extends JFrame{
 
 		menuItemBairro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Bairro();
+				new Bairro(controller);
 			}
 		});
 
 		menuItemEndereco.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Endereco();
+				new Endereco(controller);
 			}
 		});
 
 		menuItemEstado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Estado();
+				new Estado(controller);
 			}
 		});
 
 		menuItemMunicipio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Municipio();
+				new Municipio(controller);
 			}
 		});
 

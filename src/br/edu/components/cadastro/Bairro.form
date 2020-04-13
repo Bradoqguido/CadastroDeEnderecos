@@ -12,10 +12,6 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="68d87" class="javax.swing.JComboBox" binding="comboBoxBairros">
-            <constraints border-constraint="North"/>
-            <properties/>
-          </component>
           <component id="ec014" class="javax.swing.JTextField" binding="textFieldBairro">
             <constraints border-constraint="Center"/>
             <properties/>

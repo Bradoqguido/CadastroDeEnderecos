@@ -13,7 +13,9 @@ public class Controller {
     private ArrayList<MunicipioModel> municipios = new ArrayList<>();
     private ArrayList<EstadoModel> estados = new ArrayList<>();
 
-    public Controller() {
+    public Controller() { }
+
+    public void popularComDadosFixos() {
         criarRegistrosEstado();
         criarRegistrosMunicipio();
         criarRegistrosBairro();
@@ -91,20 +93,79 @@ public class Controller {
     }
 
     // Listar/Retorna lista
-    public ArrayList<EnderecoModel> retornarListaEndereco () {
-        return this.enderecos;
+    public ArrayList<String> getListaNumeroEnderecoPorLogradouro (String logradouro) {
+        ArrayList<String> listaNumeroLogradouros = new ArrayList<>();
+        listaNumeroLogradouros.add("Selecione o número");
+        for (EnderecoModel logradouroo : this.enderecos) {
+            if (logradouroo.getLogradouro().equals(logradouro)) {
+                listaNumeroLogradouros.add(logradouroo.getNumero());
+            }
+        }
+        return listaNumeroLogradouros;
     }
 
-    public ArrayList<BairroModel> retornarListaBairro () {
-        return this.bairros;
+    public ArrayList<String> getListaLogradouroPorBairro (String bairro) {
+        ArrayList<String> listaLogradouros = new ArrayList<>();
+        listaLogradouros.add("Selecione o logradouro");
+        for (EnderecoModel logradouro : this.enderecos) {
+            if (logradouro.getBairro().equals(bairro)) {
+                listaLogradouros.add(logradouro.getLogradouro());
+            }
+        }
+        return listaLogradouros;
     }
 
-    public ArrayList<MunicipioModel> retornarListaMunicipio () {
-        return this.municipios;
+    public ArrayList<String> getListaBairro () {
+        ArrayList<String> listaBairros = new ArrayList<>();
+        listaBairros.add("Selecione o bairro");
+        for (BairroModel bairro : this.bairros) {
+            listaBairros.add(bairro.getBairro());
+        }
+        return listaBairros;
     }
 
-    public ArrayList<EstadoModel> retornarListaEstado () {
-        return this.estados;
+    public ArrayList<String> getListaBairroPorMunicipio (String municipio) {
+        ArrayList<String> listaBairros = new ArrayList<>();
+        listaBairros.add("Selecione o bairro");
+        for (BairroModel bairro : this.bairros) {
+            if (bairro.getMunicipio().equals(municipio)) {
+                listaBairros.add(bairro.getBairro());
+            }
+        }
+        return listaBairros;
+    }
+
+    public ArrayList<String> getListaMunicipio () {
+        ArrayList<String> listaMunicipios = new ArrayList<>();
+        listaMunicipios.add("Selecione o municipio");
+        for (MunicipioModel municipio : this.municipios) {
+            listaMunicipios.add(municipio.getMunicipio());
+        }
+        return listaMunicipios;
+    }
+
+    public ArrayList<String> getListaMunicipioPorEstado (String estado) {
+        ArrayList<String> listaMunicipios = new ArrayList<>();
+        listaMunicipios.add("Selecione o municipio");
+        for (MunicipioModel municipio : this.municipios) {
+            if (municipio.getEstado().equals(estado)) {
+                listaMunicipios.add(municipio.getMunicipio());
+            }
+        }
+        return listaMunicipios;
+    }
+
+    public ArrayList<String> getListaEstado () {
+        ArrayList<String> listaEstados = new ArrayList<>();
+        listaEstados.add("Selecione o estado");
+        for (EstadoModel estado : this.estados) {
+            listaEstados.add(estado.getEstado());
+        }
+        return listaEstados;
+    }
+
+    public boolean verificaSeEinicioDaLista(String itemSelecionado) {
+        return itemSelecionado.contains("Selecione");
     }
 
     private void criarRegistrosEndereco() {
