@@ -1,6 +1,8 @@
 package br.edu.models;
 
-public class EstadoModel {
+import br.edu.abstracts.EstadoAbstract;
+
+public class EstadoModel extends EstadoAbstract {
     private String estado = "";
 
     public EstadoModel() {}

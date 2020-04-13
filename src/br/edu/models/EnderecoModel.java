@@ -1,15 +1,40 @@
 package br.edu.models;
 
-public class EnderecoModel {
+import br.edu.abstracts.EnderecoAbstract;
+
+public class EnderecoModel extends EnderecoAbstract {
+
+    private String logradouro = "";
+    private int numero = 0;
+    private String bairro = "";
     private String municipio = "";
     private String estado = "";
 
-    private String bairro = "";
-
-    private String rua = "";
-    private String numero = "";
-
     public EnderecoModel() {}
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
 
     public String getMunicipio() {
         return municipio;
@@ -25,29 +50,5 @@ public class EnderecoModel {
 
     public void setEstado(String estado) {
         this.estado = estado;
-    }
-
-    public String getBairro() {
-        return bairro;
-    }
-
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
-    }
-
-    public String getRua() {
-        return rua;
-    }
-
-    public void setRua(String rua) {
-        this.rua = rua;
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
     }
 }

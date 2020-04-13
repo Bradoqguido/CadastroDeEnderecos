@@ -59,7 +59,7 @@ public class Menu extends JFrame{
 
 
 		setSize(800, 600);
-		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 //		setUndecorated(true);
 		setResizable(false);
